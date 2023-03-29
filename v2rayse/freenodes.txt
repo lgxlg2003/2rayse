@@ -1,98 +1,94 @@
 ####################################
 # 创建者：v2rayse.com
-# 客户端：Surge
-# 创建时间：2023-03-29 22:01:03
+# 客户端：QuantumultX
+# 创建时间：2023-03-29 22:09:01
 # 使用模版：V2RaySE 默认模版
 # 节点数量：50
 ####################################
 
-[General]
-loglevel = notify
-bypass-system = true
-skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,localhost,*.local,e.crashlytics.com,captive.apple.com,::ffff:0:0:0:0/1,::ffff:128:0:0:0/1
-#DNS设置或根据自己网络情况进行相应设置
-bypass-tun = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
-dns-server = 119.29.29.29,223.5.5.5,218.30.19.40,61.134.1.4
-external-controller-access = password@0.0.0.0:6170
-http-api = password@0.0.0.0:6171
-test-timeout = 5
-http-api-web-dashboard = true
-exclude-simple-hostnames = true
-allow-wifi-access = true
-http-listen = 0.0.0.0:6152
-socks5-listen = 0.0.0.0:6153
-wifi-access-http-port = 6152
-wifi-access-socks5-port = 6153
+[general]
+excluded_routes = 192.168.0.0/16, 172.16.0.0/12, 100.64.0.0/10, 10.0.0.0/8
+geo_location_checker = http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-XIAO/QuantumultX/raw/master/Scripts/IP_API.js
+network_check_url = http://www.baidu.com/
+server_check_url = http://www.gstatic.com/generate_204
 
-[Script]
-http-request https?:\/\/.*\.iqiyi\.com\/.*authcookie= script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js
+[dns]
+server = 119.29.29.29
+server = 223.5.5.5
+server = 1.0.0.1
+server = 8.8.8.8
 
-[Proxy]
-DIRECT = direct
-🇺🇸_US_美国_1 = vmess, 143.42.31.89, 443, username = 927094d3-d678-4763-8591-e240d0bcae87, tls = true, vmess-aead = true, tls13 = false, ws = true, sni = 143.42.31.89, skip-cert-verify = true, tfo = false, udp-relay = false
-🇯🇵_JP_日本_1 = ss, 85.208.108.60, 8118, encrypt-method = aes-256-gcm, password = cdBIDV42DCwnfIN, tfo = false, udp-relay = false
-🇨🇳_CN_中国_1 = ss, 14.29.124.168, 25207, encrypt-method = aes-128-cfb, password = QazEdcTgb159@$*, tfo = false, udp-relay = false
-🇺🇸_US_美国_2 = vmess, cf-topspeed.uk, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, sni = cf-topspeed.uk, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_1 = vmess, quranweb25.xyz, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, sni = quranweb25.xyz, skip-cert-verify = true, tfo = false, udp-relay = false
-🇦🇲_AM_亚美尼亚 = vmess, 185.162.228.110, 443, username = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /AUIKN8AU, ws-headers = host:"oplg1.cfcdn2.xyz", sni = 185.162.228.110, skip-cert-verify = true, tfo = false, udp-relay = false
-🇨🇳_CN_中国_2 = vmess, 36.134.16.190, 11023, username = 8c042a38-71c1-1dcb-00df-54880236e0dc, tls = false, vmess-aead = true, tls13 = false, sni = 36.134.16.190, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_2 = vmess, 172.67.222.57, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /current_time, ws-headers = host:"quranweb22.xyz", sni = 172.67.222.57, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_3 = vmess, quran-audio5.xyz, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /current_time, ws-headers = host:"quran-audio5.xyz", sni = quran-audio5.xyz, skip-cert-verify = true, tfo = false, udp-relay = false
-🇫🇷_FR_法国 = trojan, a1.veryfastnet1.tk, 32894, password = HchlVCfnXB, skip-cert-verify = true, sni = jamaran.ir, tfo = false, udp-relay = false
-🇧🇿_BZ_伯利兹 = vmess, 203.30.191.8, 443, username = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /AUIKN8AU, ws-headers = host:"oplg1.cfcdn2.xyz", sni = 203.30.191.8, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国_3 = vmess, 172.67.135.57, 443, username = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /AUIKN8AU, ws-headers = host:"oplg1.cfcdn2.xyz", sni = 172.67.135.57, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国_4 = ss, 38.75.136.102, 8888, encrypt-method = aes-256-gcm, password = Y6R9pAtvxxzmGC, tfo = false, udp-relay = false
-🇺🇸_US_美国_5 = vmess, cf-topspeedonline.uk, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, sni = cf-topspeedonline.uk, skip-cert-verify = true, tfo = false, udp-relay = false
-🇨🇳_CN_中国_3 = ss, 14.29.124.168, 25252, encrypt-method = aes-128-cfb, password = QazEdcTgb159@$*, tfo = false, udp-relay = false
-🇺🇸_US_美国_6 = vmess, 172.67.70.22, 443, username = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /AUIKN8AU, ws-headers = host:"oplg1.cfcdn2.xyz", sni = 172.67.70.22, skip-cert-verify = true, tfo = false, udp-relay = false
-🇯🇵_JP_日本_2 = ss, 43.207.221.161, 443, encrypt-method = aes-256-cfb, password = amazonskr05, tfo = false, udp-relay = false
-🇺🇸_US_美国_7 = ss, 35.91.131.156, 443, encrypt-method = aes-256-cfb, password = amazonskr05, tfo = false, udp-relay = false
-🇨🇳_CN_中国_4 = ss, 14.29.124.168, 25231, encrypt-method = aes-128-cfb, password = QazEdcTgb159@$*, tfo = false, udp-relay = false
-🇮🇳_IN_印度 = trojan, 152.70.74.66, 443, password = d906afe5-7c3c-4ddc-aaa4-61c154a82e5e, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国_8 = vmess, uk1.scproxy.top, 443, username = 823c31da-701f-483d-b36e-896e5cf0987a, tls = true, vmess-aead = true, tls13 = false, ws = true, sni = uk1.scproxy.top, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇳🇱_NL_荷兰_1 = vmess, 156.225.67.107, 51234, username = 29a5d48e-24f1-48fd-a5e1-9a46cb31032f, tls = false, vmess-aead = false, tls13 = false, sni = 156.225.67.107, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国_9 = vmess, quran-audio.xyz, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /current_time, ws-headers = host:"quran-audio.xyz", sni = quran-audio.xyz, skip-cert-verify = true, tfo = false, udp-relay = false
-🇨🇳_CN_中国_5 = vmess, 106.55.234.95, 31372, username = 374d3519-455c-45b8-e3b1-0e2e9fcf4411, tls = false, vmess-aead = true, tls13 = false, sni = 106.55.234.95, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇬🇧_GB_英国_1 = vmess, holyquran15.store, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /current_time, ws-headers = host:"holyquran15.store", sni = holyquran15.store, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_4 = vmess, holyquran3.store, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, sni = holyquran3.store, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国_10 = vmess, 143.42.110.81, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, sni = 143.42.110.81, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_5 = vmess, cf-topspeedv4.uk, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /current_time, ws-headers = host:"cf-topspeedv4.uk", sni = cf-topspeedv4.uk, skip-cert-verify = true, tfo = false, udp-relay = false
-🇷🇺_RU_俄罗斯联邦 = trojan, 176.32.32.223, 443, password = 3e1890e7-4746-4378-89ba-10c7bbe06094, skip-cert-verify = true, sni = 1.hk1997.pro, tfo = false, udp-relay = false
-🇨🇳_CN_中国_6 = vmess, 112.132.215.189, 50002, username = 418048af-a293-4b99-9b0c-98ca3580dd24, tls = false, vmess-aead = false, tls13 = false, sni = 112.132.215.189, skip-cert-verify = true, tfo = false, udp-relay = false
-🇨🇳_CN_中国_7 = ss, 36.139.166.247, 11023, encrypt-method = aes-256-gcm, password = ll668668@, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇬🇧_GB_英国_2 = vmess, quranweb16.xyz, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, sni = quranweb16.xyz, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_6 = vmess, 172.67.132.167, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /current_time, ws-headers = host:"holyquran11.store", sni = 172.67.132.167, skip-cert-verify = true, tfo = false, udp-relay = false
-🇨🇳_CN_中国_8 = vmess, data-hk-v1.shwjfkw.cn, 50207, username = b1478e24-4916-3abe-8f17-15931012ecbe, tls = false, vmess-aead = false, tls13 = false, ws = true, ws-path = /hls/cctv5phd.m3u8, sni = data-hk-v1.shwjfkw.cn, skip-cert-verify = true, tfo = false, udp-relay = false
-🇨🇳_CN_中国_9 = ss, 14.29.124.168, 25233, encrypt-method = aes-128-cfb, password = QazEdcTgb159@$*, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇳🇱_NL_荷兰_2 = vmess, 156.225.67.146, 51948, username = 93503dd5-245a-4eb1-ae2a-57ab9f2b3c29, tls = false, vmess-aead = false, tls13 = false, sni = 156.225.67.146, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_7 = vmess, quranweb41.xyz, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, sni = quranweb41.xyz, skip-cert-verify = true, tfo = false, udp-relay = false
-🇨🇳_CN_中国_10 = ss, 36.139.166.231, 11023, encrypt-method = aes-256-gcm, password = ll668668@, tfo = false, udp-relay = false
-🇧🇿_BZ_伯利兹->🇺🇸_US_美国 = vmess, 203.30.191.5, 443, username = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /AUIKN8AU, ws-headers = host:"oplg1.cfcdn2.xyz", sni = 203.30.191.5, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_8 = vmess, quranweb24.xyz, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /current_time, ws-headers = host:"quranweb24.xyz", sni = quranweb24.xyz, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_9 = vmess, wwwow.ir, 443, username = 84b4d2ac-699b-4ba5-a6b2-adaaa82b667d, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /84b4d2ac-699b-4ba5-a6b2-adaaa82b667d-vm, ws-headers = host:"wwwow.ir", sni = wwwow.ir, skip-cert-verify = true, tfo = false, udp-relay = false
-🇷🇴_RO_罗马尼亚->🇺🇸_US_美国 = vmess, mtn.ircf.space, 443, username = 823c31da-701f-483d-b36e-896e5cf0987a, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /dp2.scproxy.top/shirker, ws-headers = host:"irancelll.appsandhack2.tech", sni = mtn.ircf.space, skip-cert-verify = true, tfo = false, udp-relay = false
-🇨🇳_CN_中国_11 = ss, 14.29.124.168, 25261, encrypt-method = aes-128-cfb, password = QazEdcTgb159@$*, tfo = false, udp-relay = false
-🇸🇬_SG_新加坡 = ss, 52.77.220.17, 443, encrypt-method = aes-256-cfb, password = amazonskr05, tfo = false, udp-relay = false
-🇺🇸_US_美国_11 = vmess, s245.rpscloud3.cloud, 80, username = d65ca664-72d3-4a14-a836-00eadd0df46e, tls = false, vmess-aead = true, tls13 = false, ws = true, ws-path = /graphql, ws-headers = host:"s245.rpscloud3.cloud", sni = s245.rpscloud3.cloud, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇩🇪_DE_德国_10 = vmess, holyquran8.store, 443, username = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /current_time, ws-headers = host:"holyquran8.store", sni = holyquran8.store, skip-cert-verify = true, tfo = false, udp-relay = false
-🇰🇷_KR_韩国 = ss, 43.201.60.60, 443, encrypt-method = aes-256-cfb, password = amazonskr05, tfo = false, udp-relay = false
-🇨🇳_CN_中国->🇺🇸_US_美国 = vmess, 111.23.252.215, 45070, username = 418048af-a293-4b99-9b0c-98ca3580dd24, tls = false, vmess-aead = false, tls13 = false, sni = 111.23.252.215, skip-cert-verify = true, tfo = false, udp-relay = false
-🇺🇸_US_美国->🇬🇧_GB_英国_3 = vmess, 172.67.209.170, 443, username = d05d144a-71a9-4720-8c4e-565257953069, tls = true, vmess-aead = true, tls13 = false, ws = true, ws-path = /, ws-headers = host:"woiden.739256.xyz", sni = 172.67.209.170, skip-cert-verify = true, tfo = false, udp-relay = false
-🇨🇳_CN_中国_12 = vmess, 36.133.171.209, 11023, username = 8c042a38-71c1-1dcb-00df-54880236e0dc, tls = false, vmess-aead = true, tls13 = false, sni = 36.133.171.209, skip-cert-verify = true, tfo = false, udp-relay = false
+[policy]
+static = 🚀 节点选择, ♻️ 自动选择, DIRECT, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
+url-latency-benchmark = ♻️ 自动选择, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
+static = 🌍 国外媒体, 🚀 节点选择, ♻️ 自动选择, 🎯 全球直连, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
+static = 📲 电报信息, 🚀 节点选择, 🎯 全球直连, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
+static = Ⓜ️ 微软服务, 🎯 全球直连, 🚀 节点选择, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
+static = 🍎 苹果服务, 🚀 节点选择, 🎯 全球直连, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
+static = 🎯 全球直连, DIRECT, 🚀 节点选择, ♻️ 自动选择
+static = 🛑 全球拦截, REJECT, DIRECT
+static = 🍃 应用净化, REJECT, DIRECT
+static = 🐟 漏网之鱼, 🚀 节点选择, 🎯 全球直连, ♻️ 自动选择, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
 
-[Proxy Group]
-🚀 节点选择 = select, ♻️ 自动选择, DIRECT, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
-♻️ 自动选择 = url-test, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12, url = http://www.gstatic.com/generate_204, interval = 300, tolerance = 50
-🌍 国外媒体 = select, 🚀 节点选择, ♻️ 自动选择, 🎯 全球直连, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
-📲 电报信息 = select, 🚀 节点选择, 🎯 全球直连, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
-Ⓜ️ 微软服务 = select, 🎯 全球直连, 🚀 节点选择, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
-🍎 苹果服务 = select, 🚀 节点选择, 🎯 全球直连, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
-🎯 全球直连 = select, DIRECT, 🚀 节点选择, ♻️ 自动选择
-🛑 全球拦截 = select, REJECT, DIRECT
-🍃 应用净化 = select, REJECT, DIRECT
-🐟 漏网之鱼 = select, 🚀 节点选择, 🎯 全球直连, ♻️ 自动选择, 🇺🇸_US_美国_1, 🇯🇵_JP_日本_1, 🇨🇳_CN_中国_1, 🇺🇸_US_美国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_1, 🇦🇲_AM_亚美尼亚, 🇨🇳_CN_中国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_3, 🇫🇷_FR_法国, 🇧🇿_BZ_伯利兹, 🇺🇸_US_美国_3, 🇺🇸_US_美国_4, 🇺🇸_US_美国_5, 🇨🇳_CN_中国_3, 🇺🇸_US_美国_6, 🇯🇵_JP_日本_2, 🇺🇸_US_美国_7, 🇨🇳_CN_中国_4, 🇮🇳_IN_印度, 🇺🇸_US_美国_8, 🇺🇸_US_美国->🇳🇱_NL_荷兰_1, 🇺🇸_US_美国_9, 🇨🇳_CN_中国_5, 🇺🇸_US_美国->🇬🇧_GB_英国_1, 🇺🇸_US_美国->🇩🇪_DE_德国_4, 🇺🇸_US_美国_10, 🇺🇸_US_美国->🇩🇪_DE_德国_5, 🇷🇺_RU_俄罗斯联邦, 🇨🇳_CN_中国_6, 🇨🇳_CN_中国_7, 🇺🇸_US_美国->🇬🇧_GB_英国_2, 🇺🇸_US_美国->🇩🇪_DE_德国_6, 🇨🇳_CN_中国_8, 🇨🇳_CN_中国_9, 🇺🇸_US_美国->🇳🇱_NL_荷兰_2, 🇺🇸_US_美国->🇩🇪_DE_德国_7, 🇨🇳_CN_中国_10, 🇧🇿_BZ_伯利兹->🇺🇸_US_美国, 🇺🇸_US_美国->🇩🇪_DE_德国_8, 🇺🇸_US_美国->🇩🇪_DE_德国_9, 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国, 🇨🇳_CN_中国_11, 🇸🇬_SG_新加坡, 🇺🇸_US_美国_11, 🇺🇸_US_美国->🇩🇪_DE_德国_10, 🇰🇷_KR_韩国, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇺🇸_US_美国->🇬🇧_GB_英国_3, 🇨🇳_CN_中国_12
+[server_remote]
 
-[Rule]
+[filter_remote]
+
+[rewrite_remote]
+
+[server_local]
+vmess = 143.42.31.89:443, method = chacha20-ietf-poly1305, password = 927094d3-d678-4763-8591-e240d0bcae87, aead = true, tls13 = true, obfs = wss, obfs-host = 143.42.31.89, fast-open = false, tag = 🇺🇸_US_美国_1
+shadowsocks = 85.208.108.60:8118, method = aes-256-gcm, password = cdBIDV42DCwnfIN, fast-open = false, tag = 🇯🇵_JP_日本_1
+shadowsocks = 14.29.124.168:25207, method = aes-128-cfb, password = QazEdcTgb159@$*, fast-open = false, tag = 🇨🇳_CN_中国_1
+vmess = cf-topspeed.uk:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = cf-topspeed.uk, fast-open = false, tag = 🇺🇸_US_美国_2
+vmess = quranweb25.xyz:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = quranweb25.xyz, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_1
+vmess = 185.162.228.110:443, method = chacha20-ietf-poly1305, password = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, aead = true, tls13 = true, obfs = wss, obfs-host = oplg1.cfcdn2.xyz, obfs-uri = /AUIKN8AU, fast-open = false, tag = 🇦🇲_AM_亚美尼亚
+vmess = 36.134.16.190:11023, method = chacha20-ietf-poly1305, password = 8c042a38-71c1-1dcb-00df-54880236e0dc, aead = true, tls13 = false, fast-open = false, tag = 🇨🇳_CN_中国_2
+vmess = 172.67.222.57:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = quranweb22.xyz, obfs-uri = /current_time, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_2
+vmess = quran-audio5.xyz:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = quran-audio5.xyz, obfs-uri = /current_time, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_3
+trojan = a1.veryfastnet1.tk:32894, password = HchlVCfnXB, over-tls = true, tls-host = jamaran.ir, tls13 = false, fast-open = false, udp-relay = true, tls-verification = true, tag = 🇫🇷_FR_法国
+vmess = 203.30.191.8:443, method = chacha20-ietf-poly1305, password = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, aead = true, tls13 = true, obfs = wss, obfs-host = oplg1.cfcdn2.xyz, obfs-uri = /AUIKN8AU, fast-open = false, tag = 🇧🇿_BZ_伯利兹
+vmess = 172.67.135.57:443, method = chacha20-ietf-poly1305, password = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, aead = true, tls13 = true, obfs = wss, obfs-host = oplg1.cfcdn2.xyz, obfs-uri = /AUIKN8AU, fast-open = false, tag = 🇺🇸_US_美国_3
+shadowsocks = 38.75.136.102:8888, method = aes-256-gcm, password = Y6R9pAtvxxzmGC, fast-open = false, tag = 🇺🇸_US_美国_4
+vmess = cf-topspeedonline.uk:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = cf-topspeedonline.uk, fast-open = false, tag = 🇺🇸_US_美国_5
+shadowsocks = 14.29.124.168:25252, method = aes-128-cfb, password = QazEdcTgb159@$*, fast-open = false, tag = 🇨🇳_CN_中国_3
+vmess = 172.67.70.22:443, method = chacha20-ietf-poly1305, password = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, aead = true, tls13 = true, obfs = wss, obfs-host = oplg1.cfcdn2.xyz, obfs-uri = /AUIKN8AU, fast-open = false, tag = 🇺🇸_US_美国_6
+shadowsocks = 43.207.221.161:443, method = aes-256-cfb, password = amazonskr05, fast-open = false, tag = 🇯🇵_JP_日本_2
+shadowsocks = 35.91.131.156:443, method = aes-256-cfb, password = amazonskr05, fast-open = false, tag = 🇺🇸_US_美国_7
+shadowsocks = 14.29.124.168:25231, method = aes-128-cfb, password = QazEdcTgb159@$*, fast-open = false, tag = 🇨🇳_CN_中国_4
+trojan = 152.70.74.66:443, password = d906afe5-7c3c-4ddc-aaa4-61c154a82e5e, over-tls = true, tls-host = , tls13 = false, fast-open = false, udp-relay = true, tls-verification = true, tag = 🇮🇳_IN_印度
+vmess = uk1.scproxy.top:443, method = chacha20-ietf-poly1305, password = 823c31da-701f-483d-b36e-896e5cf0987a, aead = true, tls13 = true, obfs = wss, obfs-host = uk1.scproxy.top, fast-open = false, tag = 🇺🇸_US_美国_8
+vmess = 156.225.67.107:51234, method = chacha20-ietf-poly1305, password = 29a5d48e-24f1-48fd-a5e1-9a46cb31032f, aead = false, tls13 = false, fast-open = false, tag = 🇺🇸_US_美国->🇳🇱_NL_荷兰_1
+vmess = quran-audio.xyz:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = quran-audio.xyz, obfs-uri = /current_time, fast-open = false, tag = 🇺🇸_US_美国_9
+vmess = 106.55.234.95:31372, method = chacha20-ietf-poly1305, password = 374d3519-455c-45b8-e3b1-0e2e9fcf4411, aead = true, tls13 = false, fast-open = false, tag = 🇨🇳_CN_中国_5
+vmess = holyquran15.store:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = holyquran15.store, obfs-uri = /current_time, fast-open = false, tag = 🇺🇸_US_美国->🇬🇧_GB_英国_1
+vmess = holyquran3.store:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = holyquran3.store, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_4
+vmess = 143.42.110.81:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = 143.42.110.81, fast-open = false, tag = 🇺🇸_US_美国_10
+vmess = cf-topspeedv4.uk:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = cf-topspeedv4.uk, obfs-uri = /current_time, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_5
+trojan = 176.32.32.223:443, password = 3e1890e7-4746-4378-89ba-10c7bbe06094, over-tls = true, tls-host = 1.hk1997.pro, tls13 = false, fast-open = false, udp-relay = true, tls-verification = true, tag = 🇷🇺_RU_俄罗斯联邦
+vmess = 112.132.215.189:50002, method = chacha20-ietf-poly1305, password = 418048af-a293-4b99-9b0c-98ca3580dd24, aead = false, tls13 = false, fast-open = false, tag = 🇨🇳_CN_中国_6
+shadowsocks = 36.139.166.247:11023, method = aes-256-gcm, password = ll668668@, fast-open = false, tag = 🇨🇳_CN_中国_7
+vmess = quranweb16.xyz:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = quranweb16.xyz, fast-open = false, tag = 🇺🇸_US_美国->🇬🇧_GB_英国_2
+vmess = 172.67.132.167:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = holyquran11.store, obfs-uri = /current_time, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_6
+vmess = data-hk-v1.shwjfkw.cn:50207, method = chacha20-ietf-poly1305, password = b1478e24-4916-3abe-8f17-15931012ecbe, aead = false, tls13 = false, obfs = ws, obfs-uri = /hls/cctv5phd.m3u8, obfs-host = data-hk-v1.shwjfkw.cn, fast-open = false, tag = 🇨🇳_CN_中国_8
+shadowsocks = 14.29.124.168:25233, method = aes-128-cfb, password = QazEdcTgb159@$*, fast-open = false, tag = 🇨🇳_CN_中国_9
+vmess = 156.225.67.146:51948, method = chacha20-ietf-poly1305, password = 93503dd5-245a-4eb1-ae2a-57ab9f2b3c29, aead = false, tls13 = false, fast-open = false, tag = 🇺🇸_US_美国->🇳🇱_NL_荷兰_2
+vmess = quranweb41.xyz:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = quranweb41.xyz, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_7
+shadowsocks = 36.139.166.231:11023, method = aes-256-gcm, password = ll668668@, fast-open = false, tag = 🇨🇳_CN_中国_10
+vmess = 203.30.191.5:443, method = chacha20-ietf-poly1305, password = c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7, aead = true, tls13 = true, obfs = wss, obfs-host = oplg1.cfcdn2.xyz, obfs-uri = /AUIKN8AU, fast-open = false, tag = 🇧🇿_BZ_伯利兹->🇺🇸_US_美国
+vmess = quranweb24.xyz:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = quranweb24.xyz, obfs-uri = /current_time, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_8
+vmess = wwwow.ir:443, method = chacha20-ietf-poly1305, password = 84b4d2ac-699b-4ba5-a6b2-adaaa82b667d, aead = true, tls13 = true, obfs = wss, obfs-host = wwwow.ir, obfs-uri = /84b4d2ac-699b-4ba5-a6b2-adaaa82b667d-vm, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_9
+vmess = mtn.ircf.space:443, method = chacha20-ietf-poly1305, password = 823c31da-701f-483d-b36e-896e5cf0987a, aead = true, tls13 = true, obfs = wss, obfs-host = irancelll.appsandhack2.tech, obfs-uri = /dp2.scproxy.top/shirker, fast-open = false, tag = 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国
+shadowsocks = 14.29.124.168:25261, method = aes-128-cfb, password = QazEdcTgb159@$*, fast-open = false, tag = 🇨🇳_CN_中国_11
+shadowsocks = 52.77.220.17:443, method = aes-256-cfb, password = amazonskr05, fast-open = false, tag = 🇸🇬_SG_新加坡
+vmess = s245.rpscloud3.cloud:80, method = chacha20-ietf-poly1305, password = d65ca664-72d3-4a14-a836-00eadd0df46e, aead = true, tls13 = false, obfs = ws, obfs-host = s245.rpscloud3.cloud, obfs-uri = /graphql, fast-open = false, tag = 🇺🇸_US_美国_11
+vmess = holyquran8.store:443, method = chacha20-ietf-poly1305, password = 8bbd91fe-a30b-4e29-bfc7-c28a44c0cb8f, aead = true, tls13 = true, obfs = wss, obfs-host = holyquran8.store, obfs-uri = /current_time, fast-open = false, tag = 🇺🇸_US_美国->🇩🇪_DE_德国_10
+shadowsocks = 43.201.60.60:443, method = aes-256-cfb, password = amazonskr05, fast-open = false, tag = 🇰🇷_KR_韩国
+vmess = 111.23.252.215:45070, method = chacha20-ietf-poly1305, password = 418048af-a293-4b99-9b0c-98ca3580dd24, aead = false, tls13 = false, fast-open = false, tag = 🇨🇳_CN_中国->🇺🇸_US_美国
+vmess = 172.67.209.170:443, method = chacha20-ietf-poly1305, password = d05d144a-71a9-4720-8c4e-565257953069, aead = true, tls13 = true, obfs = wss, obfs-host = woiden.739256.xyz, obfs-uri = /, fast-open = false, tag = 🇺🇸_US_美国->🇬🇧_GB_英国_3
+vmess = 36.133.171.209:11023, method = chacha20-ietf-poly1305, password = 8c042a38-71c1-1dcb-00df-54880236e0dc, aead = true, tls13 = false, fast-open = false, tag = 🇨🇳_CN_中国_12
+
+[filter_local]
 # 本地/局域网地址
 # 参考：https://en.wikipedia.org/wiki/Reserved_IP_addresses
 # ACL4SSR标志 如没有，代表不是用ACL4SSR规则
@@ -111,10 +107,10 @@ IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve
 IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
 IP-CIDR,198.18.0.0/16,🎯 全球直连,no-resolve
 IP-CIDR,224.0.0.0/4,🎯 全球直连,no-resolve
-IP-CIDR6,::1/128,🎯 全球直连,no-resolve
-IP-CIDR6,fc00::/7,🎯 全球直连,no-resolve
-IP-CIDR6,fe80::/10,🎯 全球直连,no-resolve
-IP-CIDR6,fd00::/8,🎯 全球直连,no-resolve
+IP6-CIDR,::1/128,🎯 全球直连,no-resolve
+IP6-CIDR,fc00::/7,🎯 全球直连,no-resolve
+IP6-CIDR,fe80::/10,🎯 全球直连,no-resolve
+IP6-CIDR,fd00::/8,🎯 全球直连,no-resolve
 DOMAIN,instant.arubanetworks.com,🎯 全球直连
 DOMAIN,setmeup.arubanetworks.com,🎯 全球直连
 DOMAIN,router.asus.com,🎯 全球直连
@@ -2060,7 +2056,7 @@ DOMAIN-SUFFIX,amazonuniversity.jobs,🌍 国外媒体
 DOMAIN-SUFFIX,amazonvideo.com,🌍 国外媒体
 DOMAIN-SUFFIX,media-amazon.com,🌍 国外媒体
 DOMAIN-SUFFIX,pv-cdn.net,🌍 国外媒体
-URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/,🌍 国外媒体
+#,URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/,🌍 国外媒体
 USER-AGENT,AppleNews*,🌍 国外媒体
 USER-AGENT,com.apple.news*,🌍 国外媒体
 DOMAIN,gspe1-ssl.ls.apple.com,🌍 国外媒体
@@ -2320,9 +2316,9 @@ DOMAIN-SUFFIX,twitch-ext.rootonline.de,🌍 国外媒体
 DOMAIN-SUFFIX,twitch.tv,🌍 国外媒体
 DOMAIN-SUFFIX,twitchcdn.net,🌍 国外媒体
 USER-AGENT,Viu*,🌍 国外媒体
-PROCESS-NAME,com.viu.pad,🌍 国外媒体
-PROCESS-NAME,com.viu.phone,🌍 国外媒体
-PROCESS-NAME,com.vuclip.viu,🌍 国外媒体
+#,PROCESS-NAME,com.viu.pad,🌍 国外媒体
+#,PROCESS-NAME,com.viu.phone,🌍 国外媒体
+#,PROCESS-NAME,com.vuclip.viu,🌍 国外媒体
 DOMAIN,api.viu.now.com,🌍 国外媒体
 DOMAIN,d1k2us671qcoau.cloudfront.net,🌍 国外媒体
 DOMAIN,d2anahhhmp1ffz.cloudfront.net,🌍 国外媒体
@@ -2369,9 +2365,9 @@ DOMAIN-SUFFIX,telesco.pe,📲 电报信息
 IP-CIDR,91.108.0.0/16,📲 电报信息,no-resolve
 IP-CIDR,109.239.140.0/24,📲 电报信息,no-resolve
 IP-CIDR,149.154.160.0/20,📲 电报信息,no-resolve
-IP-CIDR6,2001:67c:4e8::/48,📲 电报信息,no-resolve
-IP-CIDR6,2001:b28:f23d::/48,📲 电报信息,no-resolve
-IP-CIDR6,2001:b28:f23f::/48,📲 电报信息,no-resolve
+IP6-CIDR,2001:67c:4e8::/48,📲 电报信息,no-resolve
+IP6-CIDR,2001:b28:f23d::/48,📲 电报信息,no-resolve
+IP6-CIDR,2001:b28:f23f::/48,📲 电报信息,no-resolve
 # 长风网站，自动注入
 DOMAIN-SUFFIX,v2rayse.com,🚀 节点选择
 DOMAIN-SUFFIX,cff.pw,🚀 节点选择
@@ -2785,9 +2781,9 @@ DOMAIN-SUFFIX,telesco.pe,🚀 节点选择
 IP-CIDR,91.108.0.0/16,🚀 节点选择,no-resolve
 IP-CIDR,109.239.140.0/24,🚀 节点选择,no-resolve
 IP-CIDR,149.154.160.0/20,🚀 节点选择,no-resolve
-IP-CIDR6,2001:67c:4e8::/48,🚀 节点选择,no-resolve
-IP-CIDR6,2001:b28:f23d::/48,🚀 节点选择,no-resolve
-IP-CIDR6,2001:b28:f23f::/48,🚀 节点选择,no-resolve
+IP6-CIDR,2001:67c:4e8::/48,🚀 节点选择,no-resolve
+IP6-CIDR,2001:b28:f23d::/48,🚀 节点选择,no-resolve
+IP6-CIDR,2001:b28:f23f::/48,🚀 节点选择,no-resolve
 DOMAIN-SUFFIX,terabox.com,🚀 节点选择
 DOMAIN-SUFFIX,teraboxcdn.com,🚀 节点选择
 IP-CIDR,18.194.0.0/15,🚀 节点选择,no-resolve
@@ -3247,10 +3243,10 @@ IP-CIDR,139.220.243.27/32,🎯 全球直连,no-resolve
 IP-CIDR,172.16.102.56/32,🎯 全球直连,no-resolve
 IP-CIDR,185.188.32.1/28,🎯 全球直连,no-resolve
 IP-CIDR,221.226.128.146/32,🎯 全球直连,no-resolve
-IP-CIDR6,2a0b:b580::/48,🎯 全球直连,no-resolve
-IP-CIDR6,2a0b:b581::/48,🎯 全球直连,no-resolve
-IP-CIDR6,2a0b:b582::/48,🎯 全球直连,no-resolve
-IP-CIDR6,2a0b:b583::/48,🎯 全球直连,no-resolve
+IP6-CIDR,2a0b:b580::/48,🎯 全球直连,no-resolve
+IP6-CIDR,2a0b:b581::/48,🎯 全球直连,no-resolve
+IP6-CIDR,2a0b:b582::/48,🎯 全球直连,no-resolve
+IP6-CIDR,2a0b:b583::/48,🎯 全球直连,no-resolve
 DOMAIN-SUFFIX,baomitu.com,🎯 全球直连
 DOMAIN-SUFFIX,bootcss.com,🎯 全球直连
 DOMAIN-SUFFIX,jiasule.com,🎯 全球直连
@@ -3721,3 +3717,7 @@ IP-CIDR,101.198.192.0/19,🎯 全球直连,no-resolve
 IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
 GEOIP,CN,🎯 全球直连
 FINAL,🐟 漏网之鱼
+
+[rewrite_local]
+
+[mitm]
